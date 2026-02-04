@@ -4,7 +4,9 @@ export default function CreatePage() {
   return (
     <>
       <main className="text-center h-screen justify-center mx-10 bg-emerald-500 rounded-2xl p-5 gap-10 items-center flex flex-col">
-        <h1>Επίλεξε τα φίλτρα που ταιριάζουν στην παραγγελία σου</h1>
+        <h1 className="font-mono text-sm text-center">
+          *Επίλεξε τα φίλτρα που ταιριάζουν στην παραγγελία σου
+        </h1>
         {/* <div className="flex justify-evenly">
             <label htmlFor="">Σκάλα</label>
             <select name="" id="">

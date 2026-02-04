@@ -13,19 +13,22 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { NativeSelect, NativeSelectOptGroup } from "../ui/native-select";
+import { NativeSelectGroups } from "./nativeSelectGroups";
 
 export function InputForm() {
   return (
     <form className="w-full max-w-sm">
       <FieldGroup>
         <Field>
-          <FieldLabel htmlFor="form-name">Name</FieldLabel>
-          <Input
+          <FieldLabel htmlFor="form-name">Σκάλα</FieldLabel>
+          {/* <Input
             id="form-name"
             type="text"
             placeholder="Evil Rabbit"
             required
-          />
+          /> */}
+          <NativeSelectGroups />
         </Field>
         <Field>
           <FieldLabel htmlFor="form-email">Email</FieldLabel>
