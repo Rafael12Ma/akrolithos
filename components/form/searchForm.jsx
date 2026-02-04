@@ -58,10 +58,18 @@ export function InputForm() {
           <Input id="form-address" type="text" placeholder="123 Main St" />
         </Field>
         <Field orientation="horizontal">
-          <Button type="button" variant="outline">
-            Cancel
+          {/* <Button type="button" variant="outline">
+            Clear
+          </Button> */}
+          <button
+            type="reset"
+            className="bg-white text-black p-2 rounded-xl cursor-pointer"
+          >
+            Reset
+          </button>
+          <Button className={"cursor-pointer"} type="submit">
+            Submit
           </Button>
-          <Button type="submit">Submit</Button>
         </Field>
       </FieldGroup>
     </form>
