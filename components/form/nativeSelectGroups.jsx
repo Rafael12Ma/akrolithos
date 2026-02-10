@@ -35,7 +35,7 @@ export function NativeProcessGroups() {
       <NativeSelect>
         <NativeSelectOption value="">Select Process</NativeSelectOption>
 
-        {process.map((proc) => {
+        {proc.map((proc) => {
           return (
             <NativeSelectOption key={proc.name} value={proc.name}>
               {proc.name}
