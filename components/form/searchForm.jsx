@@ -6,14 +6,7 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { NativeSelectGroups } from "./nativeSelectGroups";
+import { NativeProcessGroups, NativeSelectGroups } from "./nativeSelectGroups";
 
 export function InputForm() {
   return (
@@ -30,35 +23,74 @@ export function InputForm() {
           <NativeSelectGroups />
         </Field>
         <Field>
-          <FieldLabel htmlFor="form-email">Email</FieldLabel>
-          <Input id="form-email" type="email" placeholder="john@example.com" />
-          <FieldDescription>
+          <FieldLabel htmlFor="form-email">Τεμάχια (unit)</FieldLabel>
+          <Input id="form-email" type="number" placeholder="e.g : 10" />
+          {/* <FieldDescription>
             We&apos;ll never share your email with anyone.
-          </FieldDescription>
+          </FieldDescription> */}
         </Field>
-        <div className="grid grid-cols-2 gap-4">
+        <h1 className="text-left font-bold">Ρίχτια</h1>
+        <hr />
+        <div className="grid grid-cols-3 gap-4">
           <Field>
-            <FieldLabel htmlFor="form-phone">Phone</FieldLabel>
-            <Input id="form-phone" type="tel" placeholder="+1 (555) 123-4567" />
+            <FieldLabel htmlFor="form-email">Τεμάχια (unit)</FieldLabel>
+            <Input id="form-email" type="number" placeholder="Enter pcs" />
+            {/* <FieldDescription>
+            We&apos;ll never share your email with anyone.
+          </FieldDescription> */}
           </Field>
           <Field>
-            <FieldLabel htmlFor="form-country">Country</FieldLabel>
-            <Select defaultValue="us">
-              <SelectTrigger id="form-country">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="us">United States</SelectItem>
-                <SelectItem value="uk">United Kingdom</SelectItem>
-                <SelectItem value="ca">Canada</SelectItem>
-              </SelectContent>
-            </Select>
+            <FieldLabel htmlFor="form-email">Μήκος (cm)</FieldLabel>
+            <Input id="form-email" type="number" placeholder="25 (cm)" />
+            {/* <FieldDescription>
+            We&apos;ll never share your email with anyone.
+          </FieldDescription> */}
+          </Field>
+          <Field>
+            <FieldLabel htmlFor="form-email">Πλάτος (cm)</FieldLabel>
+            <Input id="form-email" type="number" placeholder="3 (cm)" />
+            {/* <FieldDescription>
+            We&apos;ll never share your email with anyone.
+          </FieldDescription> */}
           </Field>
         </div>
+        <h1 className="text-left font-bold">Σοβατεπί</h1>
+        <hr />
+        <div className="grid grid-cols-3 gap-4">
+          <Field>
+            <FieldLabel htmlFor="form-email">Τεμάχια (unit)</FieldLabel>
+            <Input id="form-email" type="number" placeholder="Enter pcs" />
+            {/* <FieldDescription>
+            We&apos;ll never share your email with anyone.
+          </FieldDescription> */}
+          </Field>
+          <Field>
+            <FieldLabel htmlFor="form-email">Μήκος (cm)</FieldLabel>
+            <Input id="form-email" type="number" placeholder="25 (cm)" />
+            {/* <FieldDescription>
+            We&apos;ll never share your email with anyone.
+          </FieldDescription> */}
+          </Field>
+          <Field>
+            <FieldLabel htmlFor="form-email">Πλάτος (cm)</FieldLabel>
+            <Input id="form-email" type="number" placeholder="3 (cm)" />
+            {/* <FieldDescription>
+            We&apos;ll never share your email with anyone.
+          </FieldDescription> */}
+          </Field>
+        </div>
+
         <Field>
-          <FieldLabel htmlFor="form-address">Address</FieldLabel>
-          <Input id="form-address" type="text" placeholder="123 Main St" />
+          <FieldLabel htmlFor="form-name">Ειδική επεξεργασία</FieldLabel>
+          {/* <Input
+            id="form-name"
+            type="text"
+            placeholder="Evil Rabbit"
+            required
+          /> */}
+          <NativeProcessGroups />
         </Field>
+
         <Field orientation="horizontal">
           {/* <Button type="button" variant="outline">
             Clear

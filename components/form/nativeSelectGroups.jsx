@@ -3,7 +3,7 @@ import {
   NativeSelectOptGroup,
   NativeSelectOption,
 } from "@/components/ui/native-select";
-import { products } from "../products/products";
+import { products, process } from "../products/products";
 
 export function NativeSelectGroups() {
   const prods = products;
@@ -25,5 +25,24 @@ export function NativeSelectGroups() {
         );
       })}
     </NativeSelect>
+  );
+}
+
+export function NativeProcessGroups() {
+  const proc = process;
+  return (
+    <>
+      <NativeSelect>
+        <NativeSelectOption value="">Select Process</NativeSelectOption>
+
+        {process.map((proc) => {
+          return (
+            <NativeSelectOption key={proc.name} value={proc.name}>
+              {proc.name}
+            </NativeSelectOption>
+          );
+        })}
+      </NativeSelect>
+    </>
   );
 }
