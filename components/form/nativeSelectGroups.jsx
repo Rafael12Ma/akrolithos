@@ -3,27 +3,27 @@ import {
   NativeSelectOptGroup,
   NativeSelectOption,
 } from "@/components/ui/native-select";
+import { products } from "../products/products";
 
 export function NativeSelectGroups() {
+  const prods = products;
+
   return (
     <NativeSelect>
       <NativeSelectOption value="">Select department</NativeSelectOption>
-      <NativeSelectOptGroup label="Καβάλας">
-        <NativeSelectOption value="frontend">Καβάλας</NativeSelectOption>
-      </NativeSelectOptGroup>
-      <NativeSelectOptGroup label="Γρανίτης">
-        <NativeSelectOption value="sales-rep">Γκρι</NativeSelectOption>
-        <NativeSelectOption value="sales-rep">
-          Γκρi Σφυρήλατη
-        </NativeSelectOption>
-        <NativeSelectOption value="sales-rep">Κίτρο Σαγρέ</NativeSelectOption>
-        <NativeSelectOption value="account-manager">
-          Κίτρο Σφυρήλατη
-        </NativeSelectOption>
-      </NativeSelectOptGroup>
-      <NativeSelectOptGroup label="Dark Puma">
-        <NativeSelectOption value="support">Dark Puma</NativeSelectOption>
-      </NativeSelectOptGroup>
+
+      {prods.map((product) => {
+        let a = product.name;
+        return (
+          <NativeSelectOptGroup label={product.material} key={product.name}>
+            {a.map((n) => (
+              <NativeSelectOption key={n} value={n}>
+                {n}
+              </NativeSelectOption>
+            ))}
+          </NativeSelectOptGroup>
+        );
+      })}
     </NativeSelect>
   );
 }

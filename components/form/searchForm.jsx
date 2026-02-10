@@ -13,7 +13,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { NativeSelect, NativeSelectOptGroup } from "../ui/native-select";
 import { NativeSelectGroups } from "./nativeSelectGroups";
 
 export function InputForm() {

@@ -3,7 +3,7 @@ import { InputForm } from "@/components/form/searchForm";
 export default function CreatePage() {
   return (
     <>
-      <main className="text-center h-screen justify-center mx-10 bg-emerald-500 rounded-2xl p-5 gap-10 items-center flex flex-col">
+      <main className="text-center h-screen justify-center mx-auto w-100 bg-emerald-500 rounded-2xl p-5 gap-10 items-center flex flex-col">
         <h1 className="font-mono text-sm text-center">
           *Επίλεξε τα φίλτρα που ταιριάζουν στην παραγγελία σου
         </h1>
