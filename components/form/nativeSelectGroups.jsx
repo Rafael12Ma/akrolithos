@@ -32,13 +32,13 @@ export function NativeProcessGroups() {
   const proc = process;
   return (
     <>
-      <NativeSelect>
-        <NativeSelectOption value="">Select Process</NativeSelectOption>
+      <NativeSelect name="process">
+        <NativeSelectOption>Select Process</NativeSelectOption>
 
         {proc.map((proc) => {
           return (
             <NativeSelectOption key={proc.name} value={proc.name}>
-              {proc.name}
+              {proc.name},{proc.cost}$
             </NativeSelectOption>
           );
         })}

@@ -1,54 +1,83 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
-import {
-  Field,
-  FieldDescription,
-  FieldGroup,
-  FieldLabel,
-} from "@/components/ui/field";
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { NativeProcessGroups, NativeSelectGroups } from "./nativeSelectGroups";
+import { useActionState } from "react";
+import { xfunction } from "@/app/create/page";
 
 export function InputForm() {
+  const [state, formAction] = useActionState(xfunction, {});
+
   return (
-    <form className="w-full max-w-sm">
+    <form className="w-full max-w-sm" action={formAction}>
       <FieldGroup>
         <Field>
           <FieldLabel htmlFor="form-name">Σκάλα</FieldLabel>
+          <NativeSelectGroups />
+        </Field>
+        <Field>
+          <FieldLabel>Τεμάχια (unit)</FieldLabel>
+          <Input
+            id="form-email"
+            name="sktemaxia"
+            type="number"
+            placeholder="Enter pcs"
+          />
+          {/* <FieldDescription>
+            We&apos;ll never share your email with anyone.
+          </FieldDescription> */}
+        </Field>
+
+        <Field>
+          <FieldLabel htmlFor="form-name">
+            Ειδική επεξεργασία πατημάτων
+          </FieldLabel>
           {/* <Input
             id="form-name"
             type="text"
             placeholder="Evil Rabbit"
             required
           /> */}
-          <NativeSelectGroups />
+          <NativeProcessGroups />
         </Field>
-        <Field>
-          <FieldLabel htmlFor="form-email">Τεμάχια (unit)</FieldLabel>
-          <Input id="form-email" type="number" placeholder="e.g : 10" />
-          {/* <FieldDescription>
-            We&apos;ll never share your email with anyone.
-          </FieldDescription> */}
-        </Field>
+
         <h1 className="text-left font-bold">Ρίχτια</h1>
         <hr />
         <div className="grid grid-cols-3 gap-4">
           <Field>
             <FieldLabel htmlFor="form-email">Τεμάχια (unit)</FieldLabel>
-            <Input id="form-email" type="number" placeholder="Enter pcs" />
+            <Input
+              name="rixtemaxia"
+              id="form-email"
+              type="number"
+              placeholder="Enter pcs"
+            />
             {/* <FieldDescription>
             We&apos;ll never share your email with anyone.
           </FieldDescription> */}
           </Field>
           <Field>
             <FieldLabel htmlFor="form-email">Μήκος (cm)</FieldLabel>
-            <Input id="form-email" type="number" placeholder="25 (cm)" />
+            <Input
+              name="rixmikos"
+              id="form-email"
+              type="number"
+              placeholder="25 (cm)"
+            />
             {/* <FieldDescription>
             We&apos;ll never share your email with anyone.
           </FieldDescription> */}
           </Field>
           <Field>
             <FieldLabel htmlFor="form-email">Πλάτος (cm)</FieldLabel>
-            <Input id="form-email" type="number" placeholder="3 (cm)" />
+            <Input
+              name="rixplatos"
+              id="form-email"
+              type="number"
+              placeholder="3 (cm)"
+            />
             {/* <FieldDescription>
             We&apos;ll never share your email with anyone.
           </FieldDescription> */}
@@ -59,37 +88,41 @@ export function InputForm() {
         <div className="grid grid-cols-3 gap-4">
           <Field>
             <FieldLabel htmlFor="form-email">Τεμάχια (unit)</FieldLabel>
-            <Input id="form-email" type="number" placeholder="Enter pcs" />
+            <Input
+              name="sovtemaxia"
+              id="form-email"
+              type="number"
+              placeholder="Enter pcs"
+            />
             {/* <FieldDescription>
             We&apos;ll never share your email with anyone.
           </FieldDescription> */}
           </Field>
           <Field>
             <FieldLabel htmlFor="form-email">Μήκος (cm)</FieldLabel>
-            <Input id="form-email" type="number" placeholder="25 (cm)" />
+            <Input
+              name="sovmikos"
+              id="form-email"
+              type="number"
+              placeholder="25 (cm)"
+            />
             {/* <FieldDescription>
             We&apos;ll never share your email with anyone.
           </FieldDescription> */}
           </Field>
           <Field>
             <FieldLabel htmlFor="form-email">Πλάτος (cm)</FieldLabel>
-            <Input id="form-email" type="number" placeholder="3 (cm)" />
+            <Input
+              name="sovplatos"
+              id="form-email"
+              type="number"
+              placeholder="3 (cm)"
+            />
             {/* <FieldDescription>
             We&apos;ll never share your email with anyone.
           </FieldDescription> */}
           </Field>
         </div>
-
-        <Field>
-          <FieldLabel htmlFor="form-name">Ειδική επεξεργασία</FieldLabel>
-          {/* <Input
-            id="form-name"
-            type="text"
-            placeholder="Evil Rabbit"
-            required
-          /> */}
-          <NativeProcessGroups />
-        </Field>
 
         <Field orientation="horizontal">
           {/* <Button type="button" variant="outline">
@@ -97,11 +130,14 @@ export function InputForm() {
           </Button> */}
           <button
             type="reset"
-            className="bg-white text-black p-2 rounded-xl cursor-pointer"
+            className="bg-white hover:opacity-80 active:scale-110 transition duration-100 text-black p-2 rounded-xl cursor-pointer"
           >
             Reset
           </button>
-          <Button className={"cursor-pointer"} type="submit">
+          <Button
+            className={"cursor-pointer hover:opacity-80 active:scale-125"}
+            type="submit"
+          >
             Submit
           </Button>
         </Field>
