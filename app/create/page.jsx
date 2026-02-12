@@ -1,5 +1,4 @@
 import { InputForm } from "@/components/form/searchForm";
-import {} from "@/components/form/SSfun";
 
 export default function CreatePage() {
   return (

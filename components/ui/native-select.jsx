@@ -30,7 +30,13 @@ function NativeSelect({ className, size = "default", ...props }) {
 }
 
 function NativeSelectOption({ ...props }) {
-  return <option data-slot="native-select-option" {...props} />;
+  return (
+    <option
+      className="cursor-pointer"
+      data-slot="native-select-option"
+      {...props}
+    />
+  );
 }
 
 function NativeSelectOptGroup({ className, ...props }) {

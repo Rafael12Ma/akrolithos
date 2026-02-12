@@ -12,25 +12,53 @@ export function InputForm() {
   console.log("state=", state);
 
   return (
-    <main className="text-center pt-10 justify-center mx-auto w-100 bg-emerald-500 rounded-2xl p-5 gap-10 items-center flex flex-col">
+    <main className="pt-10 justify-center lg:w-120 mx-auto w-100 bg-emerald-500 rounded-2xl p-5 gap-10 items-center flex flex-col ">
       <form className="w-full max-w-sm" action={formAction}>
         <FieldGroup>
           <Field>
-            <FieldLabel htmlFor="form-name">Σκάλα</FieldLabel>
+            <FieldLabel className={"font-bold text-xl"} htmlFor="form-name">
+              Σκάλα
+            </FieldLabel>
             <NativeSelectGroups />
           </Field>
-          <Field>
-            <FieldLabel>Τεμάχια (unit)</FieldLabel>
-            <Input
-              id="form-email"
-              name="sktemaxia"
-              type="number"
-              placeholder="Enter pcs"
-            />
-            {/* <FieldDescription>
+          <div className="grid grid-cols-3 gap-4">
+            <Field>
+              <FieldLabel htmlFor="form-email">Τεμάχια (unit)</FieldLabel>
+              <Input
+                name="sktemaxia"
+                id="form-email"
+                type="number"
+                placeholder="Enter pcs"
+              />
+              {/* <FieldDescription>
             We&apos;ll never share your email with anyone.
           </FieldDescription> */}
-          </Field>
+            </Field>
+            <Field>
+              <FieldLabel htmlFor="form-email">Μήκος (cm)</FieldLabel>
+              <Input
+                name="skmikos"
+                id="form-email"
+                type="number"
+                placeholder="Length"
+              />
+              {/* <FieldDescription>
+            We&apos;ll never share your email with anyone.
+          </FieldDescription> */}
+            </Field>
+            <Field>
+              <FieldLabel htmlFor="form-email">Πλάτος (cm)</FieldLabel>
+              <Input
+                name="skplatos"
+                id="form-email"
+                type="number"
+                placeholder="3 (cm)"
+              />
+              {/* <FieldDescription>
+            We&apos;ll never share your email with anyone.
+          </FieldDescription> */}
+            </Field>
+          </div>
 
           <Field>
             <FieldLabel htmlFor="form-name">
@@ -145,14 +173,19 @@ export function InputForm() {
           </Field>
         </FieldGroup>
       </form>
-      <h1>{state?.sktemaxia}</h1>
-      <h1>{state?.process}</h1>
-      <h1>{state?.rixtemaxia}</h1>
-      <h1>{state?.rixmikos}</h1>
-      <h1>{state?.rixplatos}</h1> 
-      <h1>{state?.sovtemaxia}</h1>
-      <h1>{state?.sovmikos}</h1>
-      <h1>{state?.sovplatos}</h1>
+      <section className="text-left flex flex-col">
+        <h1>{state ? state.product : null}</h1>
+        <h1>{state ? state.sktemaxia : null}</h1>
+        <h1>{state ? state.skmikos : null}</h1>
+        <h1>{state ? state.skplatos : null}</h1>
+        <h1>{state ? state.process : null}</h1>
+        <h1>{state ? state.rixtemaxia : null}</h1>
+        <h1>{state ? state.rixmikos : null}</h1>
+        <h1>{state ? state.rixplatos : null}</h1>
+        <h1>{state ? state.sovtemaxia : null}</h1>
+        <h1>{state ? state.sovmikos : null}</h1>
+        <h1>{state ? state.sovplatos : null}</h1>
+      </section>
     </main>
   );
 }

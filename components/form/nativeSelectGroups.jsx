@@ -9,8 +9,8 @@ export function NativeSelectGroups() {
   const prods = products;
 
   return (
-    <NativeSelect>
-      <NativeSelectOption value="">Select department</NativeSelectOption>
+    <NativeSelect name="product">
+      <NativeSelectOption value="">Select product</NativeSelectOption>
 
       {prods.map((product) => {
         let a = product.name;
@@ -33,7 +33,7 @@ export function NativeProcessGroups() {
   return (
     <>
       <NativeSelect name="process">
-        <NativeSelectOption>Select Process</NativeSelectOption>
+        <NativeSelectOption value="">Ειδική επεξεργασία</NativeSelectOption>
 
         {proc.map((proc) => {
           return (
