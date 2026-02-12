@@ -174,17 +174,21 @@ export function InputForm() {
         </FieldGroup>
       </form>
       <section className="text-left flex flex-col">
-        <h1>{state ? state.product : null}</h1>
-        <h1>{state ? state.sktemaxia : null}</h1>
-        <h1>{state ? state.skmikos : null}</h1>
-        <h1>{state ? state.skplatos : null}</h1>
-        <h1>{state ? state.process : null}</h1>
-        <h1>{state ? state.rixtemaxia : null}</h1>
-        <h1>{state ? state.rixmikos : null}</h1>
-        <h1>{state ? state.rixplatos : null}</h1>
-        <h1>{state ? state.sovtemaxia : null}</h1>
-        <h1>{state ? state.sovmikos : null}</h1>
-        <h1>{state ? state.sovplatos : null}</h1>
+        <h1>
+          Το προϊόν
+          <span>{state ? state.product : null}</span>
+          <span>{state ? state.sktemaxia : null}</span> τεμαχίων, με διαστάσεις
+          : <span>{state ? state.skmikos : null}</span>x{" "}
+          <span>{state ? state.skplatos : null}</span> με ειδική επεξεργασία :
+          <span>{state ? state.process : null}</span> κοστίζει :
+        </h1>
+
+        <span>{state ? state.rixtemaxia : null}</span>
+        <span>{state ? state.rixmikos : null}</span>
+        <span>{state ? state.rixplatos : null}</span>
+        <span>{state ? state.sovtemaxia : null}</span>
+        <span>{state ? state.sovmikos : null}</span>
+        <span>{state ? state.sovplatos : null}</span>
       </section>
     </main>
   );
